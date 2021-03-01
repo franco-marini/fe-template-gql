@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { Edit, Delete } from '@styled-icons/material';
 
 import theme from '../../theme';
 
 export const Container = styled.div`
   display: flex;
-  width: 25%;
+  min-width: 75%;
   flex-direction: column;
   justify-content: center;
   padding: ${theme.spacer[3]};
@@ -27,6 +28,16 @@ export const Title = styled.h2`
 
 export const Icons = styled.div`
   display: flex;
+`;
+
+export const EditIcon = styled(Edit)`
+  color: ${theme.colors.blue.darkBlue};
+  height: ${theme.fontSize.md};
+`;
+
+export const DeleteIcon = styled(Delete)`
+  color: ${theme.colors.blue.darkBlue};
+  height: ${theme.fontSize.md};
 `;
 
 export const Description = styled.p`

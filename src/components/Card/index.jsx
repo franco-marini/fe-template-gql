@@ -1,9 +1,6 @@
 import React, { FC } from 'react';
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
 
-import theme from '../../theme';
-import { Container, Title, Description, Header, Icons } from './Card-styles';
+import { Container, Title, Description, Header, Icons, EditIcon, DeleteIcon } from './Card-styles';
 
 interface Props {
   title: string;
@@ -16,8 +13,8 @@ const Card: FC<Props> = ({ title, description }: Props) => {
       <Header>
         <Title>{title}</Title>
         <Icons>
-          <EditIcon fontSize='small' color={theme.colors.blue.darkBlue} />
-          <DeleteIcon fontSize='small' color={theme.colors.blue.darkBlue} />
+          <EditIcon />
+          <DeleteIcon />
         </Icons>
       </Header>
       <Description>{description}</Description>
