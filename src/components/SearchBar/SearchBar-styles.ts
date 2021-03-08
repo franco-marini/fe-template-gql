@@ -5,7 +5,7 @@ import theme from '../../theme';
 
 export const Form = styled.form`
   display: flex;
-  min-width: 75%;
+  min-width: 50%;
   flex-direction: row;
   justify-content: center;
   padding: ${theme.spacer[3]};

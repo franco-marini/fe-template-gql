@@ -1,17 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ApolloProvider } from '@apollo/client';
 
-import Card from './components/Card';
 import SearchBar from './components/SearchBar';
+import Tasks from './components/Tasks';
+import client from './graphql';
 import theme from './theme';
 
 const App: React.FC = () => {
   return (
-    <Container>
-      <SearchBar />
-      <Card title='Hello' description='This is my new card' />
-      <Card title='Bye' description='See you soon' />
-    </Container>
+    <ApolloProvider client={client}>
+      <Container>
+        <SearchBar />
+        <Tasks />
+      </Container>
+    </ApolloProvider>
   );
 };
 

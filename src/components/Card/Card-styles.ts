@@ -5,10 +5,11 @@ import theme from '../../theme';
 
 export const Container = styled.div`
   display: flex;
-  min-width: 75%;
   flex-direction: column;
   justify-content: center;
   padding: ${theme.spacer[3]};
+  margin-top: ${theme.spacer[2]};
+  margin-bottom: ${theme.spacer[2]};
   color: ${theme.colors.blue.darkBlue};
   background-color: ${theme.colors.white.default};
   border-radius: ${theme.borderRadius.default};
