@@ -1,0 +1,5 @@
+FROM node:12.18.3
+WORKDIR /usr/frontend
+RUN yarn global add serve
+COPY ./build ./build
+RUN ls -a
