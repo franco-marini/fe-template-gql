@@ -18,7 +18,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@theme": [
+        "src/theme"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@queries/*": [
+        "src/graphql/queries/*"
+      ],
+      "@mutations/*": [
+        "src/graphql/mutations/*"
+      ],
+    },
   },
   "include": [
     "src"

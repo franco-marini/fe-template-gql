@@ -22,7 +22,7 @@ module.exports = {
       arrowFunctions: true,
     },
   },
-  plugins: ['react', '@typescript-eslint', 'prettier'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'import'],
   settings: {
     react: {
       version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
@@ -43,7 +43,8 @@ module.exports = {
     'no-inner-declarations': 'off', // https://eslint.org/docs/rules/no-inner-declarations
     // New rules
     'class-methods-use-this': 'off',
-    'import/extensions': 'off',
+    'import/extensions': 2,
+    'import/order': 2,
     'import/prefer-default-export': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-var-requires': 'off',

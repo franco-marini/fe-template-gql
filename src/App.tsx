@@ -1,17 +1,15 @@
+import { ApolloProvider } from '@apollo/client';
 import React from 'react';
 import styled from 'styled-components';
-import { ApolloProvider } from '@apollo/client';
 
-import SearchBar from './components/SearchBar';
-import Tasks from './components/Tasks';
+import Tasks from '@components/Tasks';
+import theme from '@theme';
 import client from './graphql';
-import theme from './theme';
 
 const App: React.FC = () => {
   return (
     <ApolloProvider client={client}>
       <Container>
-        <SearchBar />
         <Tasks />
       </Container>
     </ApolloProvider>

@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
 import { useQuery } from '@apollo/client';
+import React, { FC, Fragment } from 'react';
 
-import { getTask } from '../../graphql/queries/task-queries';
-import Card from '../Card';
+import Card from '@components/Card';
+import SearchBar from '@components/SearchBar';
+import { getTask } from '@queries/task-queries';
 import { List } from './Tasks-styles';
 
 const Tasks: FC = () => {
@@ -13,11 +14,14 @@ const Tasks: FC = () => {
   if (loading) return <span>Is loading please wait...</span>;
 
   return (
-    <List>
-      {data.tasks.map(({ title, id, description }: { title: string, description: string, id: string }) => (
-        <Card title={title} description={description} key={id} />
-      ))}
-    </List>
+    <Fragment>
+      <SearchBar />
+      <List>
+        {data.tasks.map(({ title, id, description }: { title: string, description: string, id: string }) => (
+          <Card title={title} description={description} key={id} />
+        ))}
+      </List>
+    </Fragment>
   );
 };
 
