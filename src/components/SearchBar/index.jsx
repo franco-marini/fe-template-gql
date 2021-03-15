@@ -15,6 +15,9 @@ const SearchBar: FC<Props> = ({ setSearchValue }: Props) => {
         value={value}
         onChange={e => {
           setValue(e.target.value);
+          if (e.target.value === '') {
+            setSearchValue('');
+          }
         }}
       />
       <SearchButton

@@ -7,7 +7,7 @@ interface Task {
 
 export const createTask = ({ task, schema }: { task: Task; schema: string }): DocumentNode => gql`
   mutation createTasks {
-    createTask(title: "${task.title}", description: "${task.description}") {
+    createTask(input: { title: "${task.title}", description: "${task.description}" }) {
       ${schema}
     }
   }
@@ -15,7 +15,7 @@ export const createTask = ({ task, schema }: { task: Task; schema: string }): Do
 
 export const updateTask = ({ task, id, schema }: { task: Task; id: string; schema: string }): DocumentNode => gql`
   mutation updateTask {
-    updateTask(id: "${id}", title: "${task.title}", description: "${task.description}") {
+    updateTask(input: { id: "${id}", title: "${task.title}", description: "${task.description}" }) {
       ${schema}
     }
   }

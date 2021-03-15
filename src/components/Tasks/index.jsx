@@ -1,7 +1,7 @@
-import React, { FC, Fragment, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { useQuery } from '@apollo/client';
 
-import { List } from './Tasks-styles';
+import { List, Container } from './Tasks-styles';
 import Card from 'components/Card';
 import SearchBar from 'components/SearchBar';
 import { getTask } from 'graphql/queries/task-queries';
@@ -15,18 +15,20 @@ const Tasks: FC = () => {
   const { loading, error, data } = useQuery(GET_TASKS);
 
   if (error) return <span>Oops! Something went wrong: {error.message}</span>;
-  if (loading) return <span>Is loading please wait...</span>;
 
-  console.log('searchTitle', searchTitle);
   return (
-    <Fragment>
+    <Container>
       <SearchBar setSearchValue={setSearchTitle} />
-      <List>
-        {data.tasks.map(({ title, id, description }: { title: string, description: string, id: string }) => (
-          <Card title={title} description={description} key={id} />
-        ))}
-      </List>
-    </Fragment>
+      {loading ? (
+        <span>Is loading please wait...</span>
+      ) : (
+        <List>
+          {data.tasks.map(({ title, id, description }: { title: string, description: string, id: string }) => (
+            <Card title={title} description={description} key={id} />
+          ))}
+        </List>
+      )}
+    </Container>
   );
 };
 

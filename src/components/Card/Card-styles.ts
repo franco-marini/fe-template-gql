@@ -3,8 +3,9 @@ import { Edit, Delete } from '@styled-icons/material';
 
 import theme from 'theme';
 
-export const Container = styled.div`
+export const Container = styled.li`
   display: flex;
+  width: 75%;
   flex-direction: column;
   justify-content: center;
   padding: ${theme.spacer[3]};
