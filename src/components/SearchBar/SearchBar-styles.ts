@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Search } from '@styled-icons/material';
 
-import theme from '@theme';
+import theme from 'theme';
 
 export const Form = styled.form`
   display: flex;

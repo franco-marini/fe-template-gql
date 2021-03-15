@@ -1,4 +1,6 @@
 FROM node:12.18.3
 WORKDIR /usr/frontend
 COPY . .
-RUN yarn --quiet
+RUN yarn
+EXPOSE 3000
+CMD ["yarn", "run", "start"]

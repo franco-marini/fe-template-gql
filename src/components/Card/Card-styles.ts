@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Edit, Delete } from '@styled-icons/material';
 
-import theme from '@theme';
+import theme from 'theme';
 
 export const Container = styled.div`
   display: flex;

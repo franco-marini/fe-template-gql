@@ -2,4 +2,5 @@ FROM node:12.18.3
 WORKDIR /usr/frontend
 RUN yarn global add serve
 COPY ./build ./build
+EXPOSE 3000
 RUN ls -a

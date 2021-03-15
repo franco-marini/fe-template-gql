@@ -5,8 +5,7 @@ services:
     build: .
     command: yarn start
     volumes:
-      - ./fe
-      - /fe/node_modules
+      - .:/usr/frontend
     ports:
       - '3000:3000'
     environment:
@@ -17,10 +16,9 @@ services:
     build: ../be
     command: yarn start
     volumes:
-      - ./be
-      - /be/node_modules
+      - ../be:/usr/backend
     ports:
-      - '${PORT}:${PORT}'
+      - '${PORT_BE}:${PORT_BE}'
     environment:
-      PORT: '${PORT}'
+      PORT_BE: '${PORT_BE}'
       DATABASE_URL: '${DATABASE_URL}'
