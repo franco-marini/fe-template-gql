@@ -3,14 +3,16 @@ const theme = {
    * SPACER
    * Used to standardize spacing (margin, padding)
    */
-  spacer: ['0px', '4px', '8px', '12px', '16px', '20px'],
+  spacer: ['0px', '4px', '8px', '12px', '16px', '20px', '24px', '28px', '32px'],
   colors: {
     white: {
       default: '#ffffff',
     },
     blue: {
+      grayBlue: '#3d4148',
       darkBlue: '#282c34',
     },
+    transparent: 'transparent',
   },
   borderRadius: {
     default: '4px',

@@ -3,10 +3,12 @@ import { useQuery } from '@apollo/client';
 
 import { List, Container, AddButton, AddIcon, TopContainer } from './Tasks-styles';
 import Card from 'components/Card';
+import Modal from 'components/Modal';
 import SearchBar from 'components/SearchBar';
 import { getTask } from 'graphql/queries/task-queries';
 
 const Tasks: FC = () => {
+  const [showModal, setShowModal] = useState(false);
   const [searchTitle, setSearchTitle] = useState('');
 
   const GET_TASKS = getTask({
@@ -19,9 +21,10 @@ const Tasks: FC = () => {
 
   return (
     <Container>
+      <Modal type='add' isOpen={showModal} closeModal={() => setShowModal(false)} />
       <TopContainer>
         <SearchBar setSearchValue={setSearchTitle} />
-        <AddButton>
+        <AddButton onClick={() => setShowModal(true)}>
           Add new task <AddIcon />
         </AddButton>
       </TopContainer>

@@ -1,6 +1,7 @@
 import { ApolloProvider } from '@apollo/client';
 import React from 'react';
 import styled from 'styled-components';
+import { ModalProvider } from 'styled-react-modal';
 
 import client from './graphql';
 import Tasks from 'components/Tasks';
@@ -9,9 +10,11 @@ import theme from 'theme';
 const App: React.FC = () => {
   return (
     <ApolloProvider client={client}>
-      <Container>
-        <Tasks />
-      </Container>
+      <ModalProvider>
+        <Container>
+          <Tasks />
+        </Container>
+      </ModalProvider>
     </ApolloProvider>
   );
 };
