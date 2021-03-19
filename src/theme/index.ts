@@ -9,8 +9,14 @@ const theme = {
       default: '#ffffff',
     },
     blue: {
-      grayBlue: '#3d4148',
       darkBlue: '#282c34',
+    },
+    gray: {
+      ['100']: '#939599',
+      ['200']: '#3d4148',
+    },
+    red: {
+      ['100']: '#CE0000',
     },
     transparent: 'transparent',
   },
